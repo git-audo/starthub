@@ -15,7 +15,7 @@
   <div class="header">
     <!-- <i data-feather="book-open"></i> -->
     <ul class="nav">
-      <li>Idee</li>
+      <li><a href="{% url 'ventures' %}">Idee</a></li>
       <li>Founders</li>
       <li>Login</li>
       <li id="signup">Iscriviti</li>
@@ -33,78 +33,94 @@
       <input type="text" name="search">
     </input>
   </div>
+  {% for venture in venture_list %}
   <div class="block" onclick="sizeup(this)">
       <div class="text">
-	  <h2 class="title">Job board per lavori da remoto</h2>
-	  <h2 class="meta">Filippo | 11 Aprile 2019</h2>      
-	  <div class="tag">Programmatore</div>
+  	  <h2 class="title">{{venture.title}}</h2>
+  	  <h2 class="meta">{{venture.author}} | {{venture.publication_date}}</h2>
+  	  <div class="tag">{{venture.tag}}</div>
       </div>
       <div class="stage">
-	  <div class="stage_item" style="background-color:#ff9f51;opacity:0.6"></div>
-	  <div class="stage_item"></div>
-	  <div class="stage_item"></div>	  
+  	  <div class="stage_item" style="background-color:#ff9f51;opacity:0.6"></div>
+  	  <div class="stage_item"></div>
+  	  <div class="stage_item"></div>
       </div>
   </div>
-  <div class="block">
-      <div class="text">
-	  <h2 class="title">Job board per lavori da remoto</h2>
-	  <h2 class="meta">Filippo | 11 Aprile 2019</h2>      
-	  <div class="tag">Marketing</div>
-      </div>
-      <div class="stage">
-	  <div class="stage_item" style="background-color:#ff9f51;opacity:0.6"></div>
-	  <div class="stage_item"></div>
-	  <div class="stage_item"></div>	  
-      </div>
-  </div>
-  <div class="block">
-      <div class="text">
-	  <h2 class="title">Job board per lavori da remoto</h2>
-	  <h2 class="meta">Filippo | 11 Aprile 2019</h2>      
-	  <div class="tag">Frontend</div>
-      </div>
-      <div class="stage">
-	  <div class="stage_item" style="background-color:#ff9f51;opacity:0.6"></div>
-	  <div class="stage_item" style="background-color:#ff9f51;opacity:0.6"></div>	  
-	  <div class="stage_item"></div>	  
-      </div>
-  </div>
-  <div class="block">
-      <div class="text">
-	  <h2 class="title">Job board per lavori da remoto</h2>
-	  <h2 class="meta">Filippo | 11 Aprile 2019</h2>      
-	  <div class="tag">Ing. Meccanico</div>
-      </div>
-      <div class="stage">
-	  <div class="stage_item" style="background-color:#ff9f51;opacity:0.6"></div>
-	  <div class="stage_item"></div>
-	  <div class="stage_item"></div>	  
-      </div>
-  </div>
-  <div class="block">
-      <div class="text">
-	  <h2 class="title">Job board per lavori da remoto</h2>
-	  <h2 class="meta">Filippo | 11 Aprile 2019</h2>      
-	  <div class="tag">Ing. Meccanico</div>
-      </div>
-      <div class="stage">
-	  <div class="stage_item" style="background-color:#ff9f51;opacity:0.6"></div>
-	  <div class="stage_item" style="background-color:#ff9f51;opacity:0.6"></div>	  
-	  <div class="stage_item"></div>	  
-      </div>
-  </div>
-  <div class="block">
-      <div class="text">
-	  <h2 class="title">Job board per lavori da remoto</h2>
-	  <h2 class="meta">Filippo | 11 Aprile 2019</h2>      
-	  <div class="tag">Ing. Meccanico</div>
-      </div>
-      <div class="stage">
-	  <div class="stage_item" style="background-color:#ff9f51;opacity:0.6"></div>
-	  <div class="stage_item" style="background-color:#ff9f51;opacity:0.6"></div>	  
-	  <div class="stage_item"></div>	  
-      </div>
-  </div>
+  {% endfor %}
+    
+  <!-- <div class="block" onclick="sizeup(this)"> -->
+  <!--     <div class="text"> -->
+  <!-- 	  <h2 class="title">Job board per lavori da remoto</h2> -->
+  <!-- 	  <h2 class="meta">Filippo | 11 Aprile 2019</h2>       -->
+  <!-- 	  <div class="tag">Programmatore</div> -->
+  <!--     </div> -->
+  <!--     <div class="stage"> -->
+  <!-- 	  <div class="stage_item" style="background-color:#ff9f51;opacity:0.6"></div> -->
+  <!-- 	  <div class="stage_item"></div> -->
+  <!-- 	  <div class="stage_item"></div>	   -->
+  <!--     </div> -->
+  <!-- </div> -->
+  <!-- <div class="block"> -->
+  <!--     <div class="text"> -->
+  <!-- 	  <h2 class="title">Job board per lavori da remoto</h2> -->
+  <!-- 	  <h2 class="meta">Filippo | 11 Aprile 2019</h2>       -->
+  <!-- 	  <div class="tag">Marketing</div> -->
+  <!--     </div> -->
+  <!--     <div class="stage"> -->
+  <!-- 	  <div class="stage_item" style="background-color:#ff9f51;opacity:0.6"></div> -->
+  <!-- 	  <div class="stage_item"></div> -->
+  <!-- 	  <div class="stage_item"></div>	   -->
+  <!--     </div> -->
+  <!-- </div> -->
+  <!-- <div class="block"> -->
+  <!--     <div class="text"> -->
+  <!-- 	  <h2 class="title">Job board per lavori da remoto</h2> -->
+  <!-- 	  <h2 class="meta">Filippo | 11 Aprile 2019</h2>       -->
+  <!-- 	  <div class="tag">Frontend</div> -->
+  <!--     </div> -->
+  <!--     <div class="stage"> -->
+  <!-- 	  <div class="stage_item" style="background-color:#ff9f51;opacity:0.6"></div> -->
+  <!-- 	  <div class="stage_item" style="background-color:#ff9f51;opacity:0.6"></div>	   -->
+  <!-- 	  <div class="stage_item"></div>	   -->
+  <!--     </div> -->
+  <!-- </div> -->
+  <!-- <div class="block"> -->
+  <!--     <div class="text"> -->
+  <!-- 	  <h2 class="title">Job board per lavori da remoto</h2> -->
+  <!-- 	  <h2 class="meta">Filippo | 11 Aprile 2019</h2>       -->
+  <!-- 	  <div class="tag">Ing. Meccanico</div> -->
+  <!--     </div> -->
+  <!--     <div class="stage"> -->
+  <!-- 	  <div class="stage_item" style="background-color:#ff9f51;opacity:0.6"></div> -->
+  <!-- 	  <div class="stage_item"></div> -->
+  <!-- 	  <div class="stage_item"></div>	   -->
+  <!--     </div> -->
+  <!-- </div> -->
+  <!-- <div class="block"> -->
+  <!--     <div class="text"> -->
+  <!-- 	  <h2 class="title">Job board per lavori da remoto</h2> -->
+  <!-- 	  <h2 class="meta">Filippo | 11 Aprile 2019</h2>       -->
+  <!-- 	  <div class="tag">Ing. Meccanico</div> -->
+  <!--     </div> -->
+  <!--     <div class="stage"> -->
+  <!-- 	  <div class="stage_item" style="background-color:#ff9f51;opacity:0.6"></div> -->
+  <!-- 	  <div class="stage_item" style="background-color:#ff9f51;opacity:0.6"></div>	   -->
+  <!-- 	  <div class="stage_item"></div>	   -->
+  <!--     </div> -->
+  <!-- </div> -->
+  <!-- <div class="block"> -->
+  <!--     <div class="text"> -->
+  <!-- 	  <h2 class="title">Job board per lavori da remoto</h2> -->
+  <!-- 	  <h2 class="meta">Filippo | 11 Aprile 2019</h2>       -->
+  <!-- 	  <div class="tag">Ing. Meccanico</div> -->
+  <!--     </div> -->
+  <!--     <div class="stage"> -->
+  <!-- 	  <div class="stage_item" style="background-color:#ff9f51;opacity:0.6"></div> -->
+  <!-- 	  <div class="stage_item" style="background-color:#ff9f51;opacity:0.6"></div>	   -->
+  <!-- 	  <div class="stage_item"></div>	   -->
+  <!--     </div> -->
+  <!-- </div> -->
+
   <div class="footer">
       <ul>
 	<li><a href="index.html">About</a></li>
