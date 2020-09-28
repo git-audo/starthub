@@ -3,8 +3,7 @@ body {
     margin: 0px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 80px 250px 280px 220px 220px 220px 220px 220px 220px 260px;
-
+    grid-template-rows: 80px 200px 280px repeat(auto-fill, 220px);
     font-family: 'Fira Sans', sans-serif;
     font-family: 'Abel', sans-serif;    
     /* background-color: #F9F9F9; */
@@ -66,7 +65,7 @@ body {
 #signup {
     width: 120px;
     height: 28px;
-    margin: 7px 5px 0 0;
+    margin: 7px 25px 0 0;
     padding: 2px 4px 3px 4px;
     background-color: #2a3ffb;
     color: white;
@@ -113,8 +112,8 @@ body {
 .page_title {
     grid-column: span 12;
     padding-top: 50px;
-    font-size: 5em;
-    font-weight: 800;
+    font-size: 4em;
+    font-weight: 600;
     text-align: center;
     opacity: 0.9;
     background-color: white;
@@ -131,8 +130,8 @@ body {
 .block_left, .block_right {
     display: flex;
     flex-flow: row;
-    margin: 0 5px 0 5px;
-    padding-left: 15px;
+    margin: 0;
+    padding-left: 20px;
     grid-column: span 12;  
     background-color: white;
     border-radius: 5px;
@@ -142,8 +141,7 @@ body {
     border-style: solid;
     border-width: 0px 0px 2px 0px;
     border-color: #f0f0f0;
-    
-}
+ }
 
 .block_left:hover, .block_right:hover {
     /* transform: scale(1.01); */
@@ -254,8 +252,7 @@ mark {
 @media only screen and (min-width: 1200px)   {
     body {
         grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: 80px 230px 230px repeat(auto-fill, 180px);	
-    	/* padding: 0 400px 0 400px; */
+        grid-template-rows: 80px 230px 230px repeat(auto-fill, 180px);
     }
 
     #home_button {
@@ -266,6 +263,10 @@ mark {
 	margin: 7px 0 0 32px;
     }
 
+    .page_title {
+	font-size: 5em;
+    }
+    
     .block_left {
         margin: 0px 15px 0px 25px;
         padding: 0 0 0 80px;	
