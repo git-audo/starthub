@@ -1,4 +1,4 @@
 from django.contrib import admin
-from board.models import Venture
+from board.models import Post
 
-admin.site.register(Venture)
+admin.site.register(Post)

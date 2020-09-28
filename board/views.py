@@ -1,15 +1,15 @@
 from django.shortcuts import render
 from django.views import generic
-from board.models import Venture
+from board.models import Post
 
-class VentureListView(generic.ListView):
-    model = Venture
+class PostsListView(generic.ListView):
+    model = Post
     template_name = 'index.html'
     
 def index(request):
-    context['ventures']
-    for venture in Venture.objects.all():
-        context += venture
+    context['posts']
+    for post in Post.objects.all():
+        context += post
 
         
     return render(request, 'index.html', context=context)

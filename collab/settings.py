@@ -55,7 +55,7 @@ ROOT_URLCONF = 'collab.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'collab.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'collabdb',
-        'USER': 'collab_user',
-        'PASSWORD': os.environ['COLLAB_PASSWORD'],
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': os.environ['DB_NAME'],        
+        'USER': os.environ['DB_USER'],        
+        'PASSWORD': os.environ['DB_PASSWORD'],
+        'HOST': os.environ['DB_HOST'],        
+        'PORT': os.environ['DB_PORT'],        
     }
 }
 
