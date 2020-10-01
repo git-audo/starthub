@@ -1,18 +1,14 @@
 from django.shortcuts import render
 from django.views import generic
+import datetime
 from board.models import Post
 from django.http import HttpResponseRedirect
-from django.views.generic.edit import CreateView
-
+from django.views.decorators.csrf import csrf_exempt
 from .forms import PostForm
 
 class PostsListView(generic.ListView):
     model = Post
     template_name = 'index.html'
-
-class PostCreate(CreateView):
-    model = Post
-    fields = '__all__'
     
     
 def index(request):
@@ -24,6 +20,7 @@ def index(request):
     return render(request, 'index.html', context=context)
 
 
+@csrf_exempt
 def get_name(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
@@ -32,7 +29,11 @@ def get_name(request):
         # check whether it's valid:
         if form.is_valid():
             # process the data in form.cleaned_data as required
-            # ...
+            post = Post()
+            post.title = request.POST.get('title')
+            post.description = request.POST.get('description')
+            post.publication_date = datetime.date.today()
+            post.save()
             # redirect to a new URL:
             return HttpResponseRedirect('/thanks/')
 
