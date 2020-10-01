@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Collab | Find your cofounder</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap" rel="stylesheet">   
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="header">
+    <!-- <i data-feather="book-open"></i> -->
+    <ul class="nav">
+      <li id="home_button">Collab</li>      
+      <li>Idee</li>
+      <li>Feedback</li>
+      <li>Login</li>
+      <li id="signup">Iscriviti</li>
+    </ul>
+  </div>
+  <div class="content">
+    <form action="" method="post">
+      <table>
+	{{ form.as_table }}
+      </table>	    
+      <input type="submit" value="OK">
+    </form>
+  </div>
+</body>

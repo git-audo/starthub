@@ -25,7 +25,7 @@ body {
     font-size: 12px;
     background-color: #f2f7fc;
     position: -webkit-sticky;
-    box-shadow: 0px 3px 2px #E1E1E1;
+/*    box-shadow: 0px 3px 2px #E1E1E1; */
 }
 
 .header ul {
@@ -302,5 +302,13 @@ mark {
 
     .stage {
 	padding-left: 32%;
+    }
+
+    form {
+	padding: 20px 0 20px 0;
+    }
+    
+    table {
+	margin: auto;
     }
 }    
