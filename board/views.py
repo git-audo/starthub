@@ -21,7 +21,7 @@ def index(request):
 
 
 @csrf_exempt
-def get_name(request):
+def new_post(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
@@ -32,6 +32,9 @@ def get_name(request):
             post = Post()
             post.title = request.POST.get('title')
             post.description = request.POST.get('description')
+            post.tag = request.POST.getlist('tag')
+            post.author = 'Mark'
+            post.phase = 'Ideazione'
             post.publication_date = datetime.date.today()
             post.save()
             # redirect to a new URL:
