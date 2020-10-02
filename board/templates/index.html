@@ -51,7 +51,15 @@
       </div>
       <div class="stage">
 	  <div class="stage_item" style="background-color:#2a3ffb;opacity:0.7"></div>
-	  <div class="pub_date">{{post.publication_date}}</div>	  	  
+	  <div class="pub_date">
+	    {% if post.is_today %}
+	    Today
+	    {% elif post.is_yesterday %}
+	    Yesterday
+	    {% else %}
+	    {{post.publication_date}}	    
+	    {% endif %}
+	  </div>	  	  
       </div>
   </div>
   {% endfor %}

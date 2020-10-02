@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
+from datetime import date
 
 class Post(models.Model):
     PHASES = [
@@ -23,6 +24,13 @@ class Post(models.Model):
         choices=PHASES,
     )
 
+    @property
+    def is_today(self):
+        return date.today() <= self.publication_date
+
+    def is_yesterday(self):
+        return (date.today()-self.publication_date).days == 1
+    
     class Meta:
         ordering = ['-publication_date']
     

@@ -34,7 +34,6 @@ def new_post(request):
             post.description = request.POST.get('description')
             post.tag = request.POST.getlist('tag')
             post.author = 'Mark'
-            post.phase = 'Ideazione'
             post.publication_date = datetime.date.today()
             post.save()
             # redirect to a new URL:
