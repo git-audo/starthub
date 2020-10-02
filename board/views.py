@@ -4,7 +4,7 @@ import datetime
 from board.models import Post
 from django.http import HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
-from .forms import PostForm
+from .forms import SignupForm, PostForm
 
 class PostsListView(generic.ListView):
     model = Post
@@ -18,6 +18,15 @@ def index(request):
 
         
     return render(request, 'index.html', context=context)
+
+
+def signup(request):
+    if request.method == 'POST':
+        return
+    else:
+        form = SignupForm()
+
+    return render(request, 'signup.html', {'form': form})
 
 
 @csrf_exempt

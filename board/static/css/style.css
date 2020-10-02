@@ -277,6 +277,8 @@ mark {
     
     #signup {
 	margin: 7px 0 0 32px;
+	padding: 5px 28px 5px 28px;
+	text-decoration: none;
     }
 
     .page_title {
