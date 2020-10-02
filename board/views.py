@@ -20,6 +20,10 @@ def index(request):
     return render(request, 'index.html', context=context)
 
 
+def login(request):
+    return render(request, 'signup.html')
+
+
 def signup(request):
     if request.method == 'POST':
         return
