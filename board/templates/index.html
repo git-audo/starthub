@@ -20,7 +20,7 @@
       <li>Idee</li>
       <li>Feedback</li>
       <li>Login</li>
-      <li id="signup"><a href="post/new">Iscriviti</a></li>
+      <li id="signup">Iscriviti</li>
     </ul>
   </div>
   <div class="page_title">
@@ -30,6 +30,9 @@
 	<p>
 	    Hai un'idea per una startup ma non le competenze tecniche?</br>Vuoi metterti in contatto con altri studenti appassionati dal mondo imprenditoriale?</br>Sei nel posto giusto
 	</p>
+	<form action="post/new/">
+	  <input id="new-post" type="submit" value="Pubblica un annuncio"/>
+	</form>
   </div>
   <!-- <div class="search"> -->
   <!--     <input type="text" name="search"> -->
@@ -48,8 +51,7 @@
       </div>
       <div class="stage">
 	  <div class="stage_item" style="background-color:#2a3ffb;opacity:0.7"></div>
-	  <div class="stage_item"></div>
-	  <div class="stage_item"></div>	  
+	  <div class="pub_date">{{post.publication_date}}</div>	  	  
       </div>
   </div>
   {% endfor %}

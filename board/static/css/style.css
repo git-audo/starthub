@@ -3,7 +3,7 @@ body {
     margin: 0px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 80px 200px 280px repeat(auto-fill, 220px);
+    grid-template-rows: 80px 190px 340px repeat(auto-fill, 220px);
     font-family: 'Fira Sans', sans-serif;
     font-family: 'Abel', sans-serif;    
     /* background-color: #F9F9F9; */
@@ -121,10 +121,25 @@ body {
 
 .content {
     grid-column: span 12;
-    padding: 50px 20px 0 20px;
+    padding: 50px 20px 10px 20px;
     text-align: center;
     font-size: 22px;
-//    box-shadow: 20px -6px 2px #E1E1E1;    
+}
+
+#new-post {
+    border: none;
+    margin: 0 25px 0 0;
+    padding: 10px 20px 10px 20px;
+    background-color: #2a3ffb;
+    color: white;
+    text-align: center;
+    border-radius: 2px;
+    font-size: 18px;
+}
+
+#new-post:hover {
+    text-decoration: none;
+    opacity: 0.8;    
 }
 
 .block_left, .block_right {
@@ -195,18 +210,19 @@ body {
     flex: 1;
     display: flex;
     flex-flow: column;
-    justify-content: center;
-    padding-left: 5%;
-    padding-bottom: 3%;
+    justify-content: flex-end;
+    padding: 0 30px 20px 0;
 }
 
 .stage_item {
     margin-top: 30px;
     background-color: #314455;
-    opacity: 0.06;
-    width: 14px;
-    height: 14px;
     border-radius: 16px;
+}
+
+.pub_date {
+    font-size: 18px;
+    opacity: 0.8;
 }
 
 mark {
@@ -252,7 +268,7 @@ mark {
 @media only screen and (min-width: 1200px)   {
     body {
         grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: 80px 230px 230px repeat(auto-fill, 180px);
+        grid-template-rows: 80px 200px 260px repeat(auto-fill, 180px);
     }
 
     #home_button {
