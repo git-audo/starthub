@@ -36,7 +36,7 @@ body {
 }
 
 .header li {
-    margin-right: 20px;
+    margin: 0 20px 0 0;
     height: 28px;
     font-size: 21px;
     color: black;
@@ -65,18 +65,31 @@ body {
 #signup {
     width: 120px;
     height: 28px;
-    margin: 7px 25px 0 0;
-    padding: 2px 4px 3px 4px;
+    margin: 0 25px 0 0;
+    padding: 0 4px 3px 4px;
     background-color: #2a3ffb;
     color: white;
     text-align: center;
     border-radius: 2px;
     font-size: 22px;
+    text-decoration: none;    
 }
 
 #signup:hover {
     text-decoration: none;
     opacity: 0.8;    
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
 }
 
 .search {

@@ -8,9 +8,15 @@
 	<p>
 	    Hai un'idea per una startup ma non le competenze tecniche?</br>Vuoi metterti in contatto con altri studenti appassionati dal mondo imprenditoriale?</br>Sei nel posto giusto
 	</p>
+	{% if user.is_authenticated %}
 	<form action="post/new/">
 	  <input id="new-post" type="submit" value="Pubblica un annuncio"/>
 	</form>
+	{% else %}
+	<form action="/login">
+	  <input id="new-post" type="submit" value="Pubblica un annuncio"/>
+	</form>
+	{% endif %}
   </div>
   <!-- <div class="search"> -->
   <!--     <input type="text" name="search"> -->

@@ -20,12 +20,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from board import views
 
+from django.contrib.auth.views import LogoutView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('board/', include('board.urls')),
     path('account/', include('django.contrib.auth.urls')),
     path('login/', views.login, name='login'),
-    path('logout/', views.index, {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
+    path('logout/', LogoutView.as_view(), name='logout'),
+    path('', include('social_django.urls', namespace='social')),    
     path('', RedirectView.as_view(url='/board/', permanent=True)),
-    path('', include('social_django.urls', namespace='social')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
