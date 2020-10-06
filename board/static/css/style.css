@@ -66,7 +66,7 @@ body {
     width: 120px;
     height: 28px;
     margin: 0 25px 0 0;
-    padding: 0 4px 3px 4px;
+    padding: 3px 10px 3px 10px;
     background-color: #2a3ffb;
     color: white;
     text-align: center;
@@ -148,6 +148,7 @@ a:visited {
     text-align: center;
     border-radius: 2px;
     font-size: 18px;
+    -webkit-appearance: button;    
 }
 
 #new-post:hover {
@@ -199,7 +200,7 @@ a:visited {
     opacity: 0.8;
 }
 
-.tags {
+.tags {  
     display: flex;
     flex-flow: row;
 }
@@ -220,7 +221,7 @@ a:visited {
 }
 
 .stage {
-    flex: 1;
+    flex: 2;
     display: flex;
     flex-flow: column;
     justify-content: flex-end;
@@ -234,6 +235,7 @@ a:visited {
 }
 
 .pub_date {
+    margin: 0;
     font-size: 18px;
     opacity: 0.8;
 }
@@ -242,6 +244,38 @@ mark {
     background-color: #ffb77c;
     color: white;
     padding: 0 3px 0 3px;
+}
+
+.full_post {
+    margin: 50px 15px 0px 25px;
+    padding: 0;	
+    grid-column: 4/10;
+    grid-row: 2/6;
+    min-width: 400px;	
+    background-color: white;
+    border-color: #f0f0f0;    
+    box-shadow: 0px 0px -1px #e0e0e0;
+    border-style: solid;    
+    border-width: 0px 0px 2px 0px;
+    border-radius: 0px;
+    font-size: 14px;
+    display: flex;
+    flex-flow: column;
+}
+
+.post_header {
+    background: red;
+    flex: 2;
+}
+
+.post_body {
+    background: blue;    
+    flex: 6;
+}
+
+.post_footer {
+    background: green;    
+    flex: 1;
 }
 
 .footer {
@@ -297,6 +331,17 @@ mark {
     .page_title {
 	font-size: 5em;
     }
+
+    #new-post {
+	border: none;
+	margin: 0 25px 0 0;
+	padding: 10px 20px 10px 20px;
+	background-color: #2a3ffb;
+	color: white;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 18px;
+    }
     
     .block_left {
         margin: 0px 15px 0px 25px;
@@ -332,7 +377,7 @@ mark {
     }
 
     .stage {
-	padding-left: 32%;
+	text-align: end;
     }
 
     form {

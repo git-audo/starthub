@@ -15,7 +15,6 @@ def index(request):
     context['posts']
     for post in Post.objects.all():
         context += post
-
         
     return render(request, 'index.html', context=context)
 
@@ -57,3 +56,17 @@ def new_post(request):
         form = PostForm()
 
     return render(request, 'form.html', {'form': form})
+
+
+class PostDetailView(generic.DetailView):
+    model = Post
+    template_name = 'post.html'
+
+
+
+def get_post(request):
+    post = Post()
+    post = Post.objects.filter(author='Carlo');
+        
+    return render(request, 'post.html', context=post)
+#    return render(request, 'post.html')    
