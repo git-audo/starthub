@@ -44,7 +44,7 @@ def new_post(request):
             post = Post()
             post.title = request.POST.get('title')
             post.description = request.POST.get('description')
-            post.tag = request.POST.getlist('tag')
+            post.tags = request.POST.getlist('tag')
             post.author = 'Mark'
             post.publication_date = datetime.date.today()
             post.save()
@@ -61,12 +61,3 @@ def new_post(request):
 class PostDetailView(generic.DetailView):
     model = Post
     template_name = 'post.html'
-
-
-
-def get_post(request):
-    post = Post()
-    post = Post.objects.filter(author='Carlo');
-        
-    return render(request, 'post.html', context=post)
-#    return render(request, 'post.html')    

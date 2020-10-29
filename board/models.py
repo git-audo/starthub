@@ -11,9 +11,10 @@ class Post(models.Model):
     
     title = models.CharField(max_length=60)
     description = models.CharField(max_length=120)
+    detailed_description = models.CharField(max_length=800)
     author = models.CharField(max_length=200)
     publication_date = models.DateField()
-    tag =  ArrayField(
+    tags =  ArrayField(
             models.CharField(max_length=50, blank=True),
             size=3,
             null=True,

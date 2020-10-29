@@ -208,8 +208,8 @@ a:visited {
 .tag {
     font-size: 17px;    
     height: 26px;
-    width: 35%;
     margin: 30px 10px 20px 0px;
+    padding: 0 35px 0 35px;
     text-align: center;    
     background-color: #fdfdfd; 
     border: 1px solid #f1f1f1;
@@ -225,7 +225,7 @@ a:visited {
     display: flex;
     flex-flow: column;
     justify-content: flex-end;
-    padding: 0 30px 20px 0;
+    padding: 0 0 20px 0;
 }
 
 .stage_item {
@@ -238,6 +238,8 @@ a:visited {
     margin: 0;
     font-size: 18px;
     opacity: 0.8;
+    justify-content:end;
+    padding: 0;
 }
 
 mark {
@@ -260,7 +262,7 @@ mark {
     border-radius: 0px;
     font-size: 14px;
     display: flex;
-    flex-flow: column;
+    flex-flow: column; opacity: 0.3;
 }
 
 .post_header {
@@ -324,7 +326,7 @@ mark {
     
     #signup {
 	margin: 7px 0 0 32px;
-	padding: 5px 28px 5px 28px;
+	padding: 2px 28px 2px 28px;
 	text-decoration: none;
     }
 
@@ -378,6 +380,7 @@ mark {
 
     .stage {
 	text-align: end;
+	padding: 0 30px 20px 0;	
     }
 
     form {

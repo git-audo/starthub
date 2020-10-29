@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Collab | Find your cofounder</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap" rel="stylesheet">   
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="header">
+    <!-- <i data-feather="book-open"></i> -->
+    <ul class="nav">
+      <li id="home_button">Starthub</li> 
+      <li>Idee</li>
+      <li>Feedback</li>
+      {% if user.is_authenticated %}
+      <li><a href="" id="logout">Profilo</a></li>            
+      <li><a href="{% url 'logout' %}" id="logout">Logout</a></li>      
+      {% else %}
+      <li><a href="{% url 'social:begin' 'google-oauth2' %}" id="login">Login</a></li>
+      <li><a href="signup" id="signup">Iscriviti</a></li>      
+      {% endif %}
+    </ul>
+  </div>
+
+  {% block content %} {% endblock %}
+
+</body>
