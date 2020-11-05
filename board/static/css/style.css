@@ -48,6 +48,13 @@ body {
     cursor: pointer;
 }
 
+.header_post {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 13;    
+}
+
 #home_button {
     position: absolute;
     left: 3%;
@@ -213,7 +220,8 @@ a:visited {
     text-align: center;    
     background-color: #fdfdfd; 
     border: 1px solid #f1f1f1;
-    border-radius: 2px;    
+    border-radius: 2px;
+    border: 1px solid #ffafaf;    
 }
 
 .tag:hover {
@@ -251,32 +259,33 @@ mark {
 .full_post {
     margin: 50px 15px 0px 25px;
     padding: 0;	
-    grid-column: 4/10;
-    grid-row: 2/6;
+    grid-column: 3/11;
+    grid-row: 2/8;
     min-width: 400px;	
     background-color: white;
-    border-color: #f0f0f0;    
+    border-color: #f0f0f0;
+    box-shadow: 2px 6px 10px #E1E1E1;    
     box-shadow: 0px 0px -1px #e0e0e0;
     border-style: solid;    
     border-width: 0px 0px 2px 0px;
-    border-radius: 0px;
+    border-radius: 10px;
     font-size: 14px;
     display: flex;
-    flex-flow: column; opacity: 0.3;
+    flex-flow: column;
 }
 
 .post_header {
-    background: red;
+#    background: red;
     flex: 2;
 }
 
 .post_body {
-    background: blue;    
+#    background: blue;    
     flex: 6;
 }
 
 .post_footer {
-    background: green;    
+#    background: green;    
     flex: 1;
 }
 
