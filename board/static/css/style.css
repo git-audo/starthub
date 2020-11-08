@@ -3,7 +3,7 @@ body {
     margin: 0px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 80px 190px 340px repeat(auto-fill, 220px);
+    grid-template-rows: 70px 140px 340px repeat(auto-fill, 200px);
     font-family: 'Fira Sans', sans-serif;
     font-family: 'Abel', sans-serif;    
     /* background-color: #F9F9F9; */
@@ -25,20 +25,19 @@ body {
     font-size: 12px;
     background-color: #f2f7fc;
     position: -webkit-sticky;
-/*    box-shadow: 0px 3px 2px #E1E1E1; */
 }
 
 .header ul {
     display: flex;
     justify-content: center;
     list-style: none;
-    margin-top: 20px;
+    margin-top: 16px;
 }
 
 .header li {
-    margin: 0 20px 0 0;
+    margin: 0 16px 0 0;
     height: 28px;
-    font-size: 21px;
+    font-size: 19px;
     color: black;
     padding-top: 9px;
 }
@@ -69,22 +68,35 @@ body {
     text-decoration: none;
 }
 
+#signup_li:hover {
+    text-decoration: none;
+}
+
 #signup {
     width: 120px;
     height: 28px;
-    margin: 0 25px 0 0;
+    margin: 0 15px 0 10px;
     padding: 3px 10px 3px 10px;
-    background-color: #2a3ffb;
+//    background-color: #2a3ffb;
     color: white;
     text-align: center;
     border-radius: 2px;
-    font-size: 22px;
-    text-decoration: none;    
+    font-size: 20px;
+    text-decoration: none;
+
+    padding: 0 10px 0 10px;
+    border: 2px solid black;
+    color: black;
+    border-radius: 6px;
+    font-weight: bold;
 }
 
 #signup:hover {
     text-decoration: none;
-    opacity: 0.8;    
+//    opacity: 0.8;
+    color: white;
+    background-color: #2a3ffb;
+    background-color: black;    
 }
 
 a {
@@ -131,7 +143,7 @@ a:visited {
 
 .page_title {
     grid-column: span 12;
-    padding-top: 50px;
+    padding-top: 24px;
     font-size: 4em;
     font-weight: 600;
     text-align: center;
@@ -151,6 +163,8 @@ a:visited {
     margin: 0 25px 0 0;
     padding: 10px 20px 10px 20px;
     background-color: #2a3ffb;
+
+    background-color: #3f52fb;
     color: white;
     text-align: center;
     border-radius: 2px;
@@ -160,7 +174,6 @@ a:visited {
 
 #new-post:hover {
     text-decoration: none;
-    opacity: 0.8;    
 }
 
 .block_left, .block_right {
@@ -172,10 +185,9 @@ a:visited {
     background-color: white;
     border-radius: 5px;
     box-shadow: 2px 6px 10px #E1E1E1;
-    box-shadow: 0px 0px -1px #e0e0e0;
     font-size: 14px;
     border-style: solid;
-    border-width: 0px 0px 2px 0px;
+    border-width: 0px 0px 1px 0px;
     border-color: #f0f0f0;
  }
 
@@ -215,17 +227,12 @@ a:visited {
 .tag {
     font-size: 17px;    
     height: 26px;
+    width: auto;
     margin: 30px 10px 20px 0px;
-    padding: 0 35px 0 35px;
+    padding: 2px 15px 2px 15px;
     text-align: center;    
-    background-color: #fdfdfd; 
-    border: 1px solid #f1f1f1;
-    border-radius: 2px;
-    border: 1px solid #ffafaf;    
-}
-
-.tag:hover {
-    border: 1px solid #ffafaf;
+    border-radius: 4px;
+    background-color: #f2f7fc;;     
 }
 
 .stage {
@@ -257,11 +264,9 @@ mark {
 }
 
 .full_post {
-    margin: 50px 15px 0px 25px;
-    padding: 0;	
-    grid-column: 3/11;
-    grid-row: 2/8;
-    min-width: 400px;	
+    padding: 0 8px 0 8px;
+    grid-row: span 10;
+    grid-column: span 12;
     background-color: white;
     border-color: #f0f0f0;
     box-shadow: 2px 6px 10px #E1E1E1;    
@@ -269,7 +274,7 @@ mark {
     border-style: solid;    
     border-width: 0px 0px 2px 0px;
     border-radius: 10px;
-    font-size: 14px;
+    font-size: 18px;
     display: flex;
     flex-flow: column;
 }
@@ -326,32 +331,47 @@ mark {
 @media only screen and (min-width: 1200px)   {
     body {
         grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: 80px 200px 260px repeat(auto-fill, 180px);
+        grid-template-rows: 80px 150px 260px repeat(auto-fill, 180px);
     }
 
+    .header li {
+        font-size: 21px;
+    }
+    
     #home_button {
         visibility: visible;
     }
     
     #signup {
-	margin: 7px 0 0 32px;
-	padding: 2px 28px 2px 28px;
-	text-decoration: none;
+	    margin: 7px 0 0 32px;
+	    padding: 1px 28px 1px 28px;
+	    text-decoration: none;
+
+        border: 2px solid #2a3ffb;
+        color: #2a3ffb;
+        border: 2px solid black;
+        color: black;
+        border-radius: 2px;
+        font-weight: 800;
     }
 
     .page_title {
-	font-size: 5em;
+	    font-size: 5em;
     }
 
     #new-post {
-	border: none;
-	margin: 0 25px 0 0;
-	padding: 10px 20px 10px 20px;
-	background-color: #2a3ffb;
-	color: white;
-	text-align: center;
-	border-radius: 2px;
-	font-size: 18px;
+	    border: none;
+	    margin: 0 25px 0 0;
+	    padding: 10px 20px 10px 20px;
+        background-color: #3f52fb;        
+	    color: white;
+	    text-align: center;
+	    border-radius: 2px;
+	    font-size: 18px;
+    }
+
+    #new-post:hover {
+        opacity: 0.9;
     }
     
     .block_left {
@@ -399,4 +419,23 @@ mark {
     table {
 	margin: auto;
     }
+
+    .full_post {
+    margin: 50px 15px 0px 25px;
+    padding: 0;	
+    grid-column: 3/11;
+    grid-row: 2/8;
+    min-width: 400px;	
+    background-color: white;
+    border-color: #f0f0f0;
+    box-shadow: 2px 6px 10px #E1E1E1;    
+    box-shadow: 0px 0px -1px #e0e0e0;
+    border-style: solid;    
+    border-width: 0px 0px 2px 0px;
+    border-radius: 10px;
+    font-size: 14px;
+    display: flex;
+    flex-flow: column;
+}
+
 }    

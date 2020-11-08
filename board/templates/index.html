@@ -28,7 +28,7 @@
 	  <h3 class="title">{{post.title}}</h3>
 	  <h2 class="meta">{{post.description}}</h2>
 	  <div class="tags">
-        {% for tag in post.tags %}
+        {% for tag in post.tags|slice:":2" %}
 	    <div class="tag">{{tag}}</div>
 	    {% endfor %}
 	  </div>

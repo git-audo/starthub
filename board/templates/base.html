@@ -19,12 +19,13 @@
       <li id="home_button">Starthub</li> 
       <li>Idee</li>
       <li>Feedback</li>
+      <li>About</li>      
       {% if user.is_authenticated %}
       <li><a href="" id="logout">Profilo</a></li>            
       <li><a href="{% url 'logout' %}" id="logout">Logout</a></li>      
       {% else %}
-      <li><a href="{% url 'social:begin' 'google-oauth2' %}" id="login">Login</a></li>
-      <li><a href="signup" id="signup">Iscriviti</a></li>      
+      <!-- <li><a href="{% url 'social:begin' 'google-oauth2' %}" id="login">Login</a></li> -->
+      <li id="signup_li"><a href="signup" id="signup">Iscriviti</a></li>      
       {% endif %}
     </ul>
   </div>
