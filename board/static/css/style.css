@@ -244,17 +244,14 @@ mark {
 }
 
 .post_header {
-    #    background: red;
     flex: 2;
 }
 
 .post_body {
-    #    background: blue;    
     flex: 6;
 }
 
 .post_footer {
-    #    background: green;    
     flex: 1;
 }
 
@@ -276,7 +273,7 @@ mark {
 
 .footer {
     grid-column: span 12;
-    margin: 150px 0 60px 0;
+    margin: 60px 0 30px 0;
     text-align: center;
     font-size: 19px;
 }

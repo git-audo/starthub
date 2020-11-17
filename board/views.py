@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from django.views import generic
-import datetime
-from board.models import Post
-from django.http import HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponseRedirect
 from .forms import SignupForm, PostForm
+from board.models import Post
+import datetime
 
 
 def index(request):

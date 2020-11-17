@@ -2,83 +2,86 @@
 
 {% block content %}
 <div class="page_title">
-    Starthub
-  </div>
-  <div class="content">
-	<p>
-	    Hai un'idea per una startup ma non le competenze tecniche?</br>Vuoi metterti in contatto con altri studenti appassionati dal mondo imprenditoriale?</br>Sei nel posto giusto
-	</p>
-	{% if user.is_authenticated %}
-	<form action="post/new/">
-	  <input id="new-post" type="submit" value="Pubblica un annuncio"/>
-	</form>
-	{% else %}
-	<form action="/login">
-	  <input id="new-post" type="submit" value="Pubblica un annuncio"/>
-	</form>
-	{% endif %}
-  </div>
+  Starthub
+</div>
+<div class="content">
+  <p>
+    Hai un'idea per una startup ma non le competenze tecniche?</br>
+    Vuoi metterti in contatto con altri studenti appassionati dal mondo imprenditoriale?</br>
+    Sei nel posto giusto
+  </p>
+  {% if user.is_authenticated %}
+  <form action="post/new/">
+    <input id="new-post" type="submit" value="Pubblica un annuncio"/>
+  </form>
+  {% else %}
+  <form action="/login">
+    <input id="new-post" type="submit" value="Pubblica un annuncio"/>
+  </form>
+  {% endif %}
+</div>
   <!-- <div class="search"> -->
   <!--     <input type="text" name="search"> -->
   <!--   </input> -->
   <!-- </div> -->
-  {% for post in post_list %}
-  <div class="block_left" id="{{post.pk}}" onclick="location.href='post/get/'+this.id;">
-      <div class="text">
-	  <h3 class="title">{{post.title}}</h3>
-	  <h2 class="meta">{{post.description}}</h2>
-	  <div class="tags">
-        {% for tag in post.tags|slice:":2" %}
-	    <div class="tag">{{tag}}</div>
-	    {% endfor %}
-	  </div>
-      </div>
-      <div class="stage">
-	  <div class="stage_item" style="background-color:#2a3ffb;opacity:0.7"></div>
-	  <div class="pub_date">
-	    {% if post.is_today %}
-	    Today
-	    {% elif post.is_yesterday %}
-	    Yesterday
-	    {% else %}
-	    {{post.publication_date}}	    
-	    {% endif %}
-	  </div>	  	  
-      </div>
+{% for post in post_list %}
+<div class="block_left" id="{{post.pk}}" onclick="location.href='post/get/'+this.id;">
+  <div class="text">
+    <h3 class="title">{{post.title}}</h3>
+    <h2 class="meta">{{post.description}}</h2>
+    <div class="tags">
+      {% for tag in post.tags|slice:":2" %}
+      <div class="tag">{{tag}}</div>
+      {% endfor %}
+    </div>
   </div>
-  {% endfor %}
+  <div class="stage">
+    <div class="stage_item" style="background-color:#2a3ffb;opacity:0.7"></div>
+    <div class="pub_date">
+      {% if post.is_today %}
+      Today
+      {% elif post.is_yesterday %}
+      Yesterday
+      {% else %}
+      {{post.publication_date}}	    
+      {% endif %}
+    </div>	  	  
+  </div>
+</div>
+{% endfor %}
   <!-- <div class="block_right"> -->
   <!--   <h3>Pubblica Un Tuo Annuncio</h3> -->
   <!--   <i data-feather="plus" style="flex:1"></i> -->
   <!-- </div> -->
-  {% block pagination %}
-    {% if is_paginated %}
-        <div class="pagination">
-            <span class="page-links">
-                {% if page_obj.has_previous %}
-                    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
-                {% endif %}
-                {% if page_obj.has_next %}
-                    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
-                {% endif %}
-            </span>
-        </div>
+{% block pagination %}
+{% if is_paginated %}
+<div class="pagination">
+  <span class="page-links">
+    {% if page_obj.has_previous %}
+    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
     {% endif %}
-  {% endblock %} 
+    {% if page_obj.has_next %}
+    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+    {% endif %}
+  </span>
+</div>
+{% endif %}
+{% endblock %} 
 
 
-  <div class="footer">
-      <ul>
-	<li><a href="index.html">About</a></li>
-	<li><a href="index.html">Terms</a></li>
-	<li><a href="index.html">About</a></li>
-	<li><a href="index.html">About</a></li>	
-      </ul>
-  </div>
-  {% endblock %}
+<div class="footer">
+  <ul>
+    <li><a href="index.html">About</a></li>
+    <li><a href="index.html">Terms</a></li>
+    <li><a href="index.html">About</a></li>
+    <li><a href="index.html">About</a></li>	
+  </ul>
+</div>
+{% endblock %}
 
 
 <script>
+  
   feather.replace()
 
   function sizeup(event) {
