@@ -51,6 +51,20 @@
   <!--   <h3>Pubblica Un Tuo Annuncio</h3> -->
   <!--   <i data-feather="plus" style="flex:1"></i> -->
   <!-- </div> -->
+  {% block pagination %}
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+                {% if page_obj.has_next %}
+                    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+  {% endblock %} 
 
 
   <div class="footer">
@@ -61,7 +75,8 @@
 	<li><a href="index.html">About</a></li>	
       </ul>
   </div>
-{% endblock%}
+  {% endblock %}
+
 
 <script>
   feather.replace()

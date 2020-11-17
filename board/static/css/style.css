@@ -4,10 +4,8 @@ body {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 70px 140px 340px repeat(auto-fill, 200px);
-    font-family: 'Fira Sans', sans-serif;
+    /*    font-family: 'Fira Sans', sans-serif; */
     font-family: 'Abel', sans-serif;    
-    /* background-color: #F9F9F9; */
-    background-color: #f2f7fc;
     background-color: #fbf7f0;
 }
 
@@ -77,7 +75,6 @@ body {
     height: 28px;
     margin: 0 15px 0 10px;
     padding: 3px 10px 3px 10px;
-//    background-color: #2a3ffb;
     color: white;
     text-align: center;
     border-radius: 2px;
@@ -93,14 +90,12 @@ body {
 
 #signup:hover {
     text-decoration: none;
-//    opacity: 0.8;
     color: white;
-    background-color: #2a3ffb;
     background-color: black;    
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 a:hover {
@@ -110,36 +105,6 @@ a:hover {
 a:visited {
     color: black;
 }
-
-.search {
-    /* grid-column: span 12; */
-    text-align: center;
-    grid-column: 4/10;
-}
-
-.search input {
-    height: 40px;
-    width: 40%;
-    background-color: white;
-    border-radius: 20px;
-    border-style: none;
-    font-size : 18px;
-    padding-left: 25px;
-    color: #314455;
-}
-
-.search input:focus {
-    animation: enlarge_width 0.3s forwards;
-}
-
-/*@keyframes enlarge_width {
-    from {
-//	width: 40%;
-    }
-    to {
-	width: 70%;
-    }
-} */
 
 .page_title {
     grid-column: span 12;
@@ -162,7 +127,6 @@ a:visited {
     border: none;
     margin: 0 25px 0 0;
     padding: 10px 20px 10px 20px;
-    background-color: #2a3ffb;
 
     background-color: #3f52fb;
     color: white;
@@ -189,7 +153,7 @@ a:visited {
     border-style: solid;
     border-width: 0px 0px 1px 0px;
     border-color: #f0f0f0;
- }
+}
 
 .block_left:hover, .block_right:hover {
     /* transform: scale(1.01); */
@@ -280,18 +244,34 @@ mark {
 }
 
 .post_header {
-#    background: red;
+    #    background: red;
     flex: 2;
 }
 
 .post_body {
-#    background: blue;    
+    #    background: blue;    
     flex: 6;
 }
 
 .post_footer {
-#    background: green;    
+    #    background: green;    
     flex: 1;
+}
+
+.pagination {
+    grid-column: 4/10;
+    margin: auto;
+    padding: 20px 0 0 0;
+    font-size: 20px;        
+}
+
+.page-links a {
+    padding: 0 20px 0 20px;
+    margin: auto;
+}
+
+.page-links a:hover {
+    opacity: 0.6;
 }
 
 .footer {
@@ -339,18 +319,18 @@ mark {
     cursor: pointer;
     display: inline-block;
     height: 50px;
-	  line-height: 50px;
+	line-height: 50px;
     text-align: left;
     text-decoration: none;
     text-transform: uppercase;
     vertical-align: middle;
     width: 320px;
-	  border-radius: 3px;
+	border-radius: 3px;
     margin: 10px auto;
     outline: rgb(255, 255, 255) none 0px;
     padding-left: 85px;
     transition: all 0.2s cubic-bezier(0.72, 0.01, 0.56, 1) 0s;
-	  -webkit-transition: all .3s ease;
+	-webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
     -o-transition: all .3s ease;
@@ -363,9 +343,9 @@ mark {
 }
 
 #google-connect:hover {
-	  border-color: rgb(220, 74, 61);
-	  background: rgb(220, 74, 61) url('https://raw.githubusercontent.com/eswarasai/social-login/master/img/google-plus-white.png') no-repeat scroll 5px 0px / 50px 50px padding-box border-box;
-	  -webkit-transition: all .8s ease-out;
+	border-color: rgb(220, 74, 61);
+	background: rgb(220, 74, 61) url('https://raw.githubusercontent.com/eswarasai/social-login/master/img/google-plus-white.png') no-repeat scroll 5px 0px / 50px 50px padding-box border-box;
+	-webkit-transition: all .8s ease-out;
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
     -o-transition: all .3s ease;
@@ -373,14 +353,14 @@ mark {
 }
 
 #google-connect span {
-	  box-sizing: border-box;
+	box-sizing: border-box;
     color: rgb(220, 74, 61);
     cursor: pointer;
     text-align: center;
     text-transform: uppercase;
     border: 0px none rgb(220, 74, 61);
     outline: rgb(255, 255, 255) none 0px;
-	  -webkit-transition: all .3s ease;
+	-webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
     -o-transition: all .3s ease;
@@ -388,8 +368,8 @@ mark {
 }
 
 #google-connect:hover span {
-	  color: #FFF;
-	  -webkit-transition: all .3s ease;
+	color: #FFF;
+	-webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
     -o-transition: all .3s ease;
@@ -448,10 +428,10 @@ mark {
         grid-column: 4/10;
         min-width: 400px;	
         background-color: white;
-        border-radius: 0px;
         box-shadow: 0px 0px -1px #e0e0e0;
         font-size: 14px;
 
+        border-radius: 0px;
         border-style: solid;
         border-width: 0px 0px 2px 0px;
         border-color: #f0f0f0;
@@ -464,46 +444,46 @@ mark {
     .block_right {
         grid-column: 9/11;
         grid-row: span 1;
-	display: flex;
-	flex-flow: row;
-	padding: 0;
+	    display: flex;
+	    flex-flow: row;
+	    padding: 0;
     }
 
     .block_right h3 {
-	margin: auto;
-	padding-left: 10%;
-	font-size: 19px;
+	    margin: auto;
+	    padding-left: 10%;
+	    font-size: 19px;
     }
 
     .stage {
-	text-align: end;
-	padding: 0 30px 20px 0;	
+	    text-align: end;
+	    padding: 0 30px 20px 0;	
     }
 
     form {
-	padding: 20px 0 20px 0;
+	    padding: 20px 0 20px 0;
     }
     
     table {
-	margin: auto;
+	    margin: auto;
     }
 
     .full_post {
-    margin: 50px 15px 0px 25px;
-    padding: 0;	
-    grid-column: 3/11;
-    grid-row: 2/8;
-    min-width: 400px;	
-    background-color: white;
-    border-color: #f0f0f0;
-    box-shadow: 2px 6px 10px #E1E1E1;    
-    box-shadow: 0px 0px -1px #e0e0e0;
-    border-style: solid;    
-    border-width: 0px 0px 2px 0px;
-    border-radius: 10px;
-    font-size: 14px;
-    display: flex;
-    flex-flow: column;
+        margin: 50px 15px 0px 25px;
+        padding: 0;	
+        grid-column: 3/11;
+        grid-row: 2/8;
+        min-width: 400px;	
+        background-color: white;
+        border-color: #f0f0f0;
+        box-shadow: 2px 6px 10px #E1E1E1;    
+        box-shadow: 0px 0px -1px #e0e0e0;
+        border-style: solid;    
+        border-width: 0px 0px 2px 0px;
+        border-radius: 10px;
+        font-size: 14px;
+        display: flex;
+        flex-flow: column;
     }
 
     .social-button {

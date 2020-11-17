@@ -6,11 +6,7 @@ from django.http import HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
 from .forms import SignupForm, PostForm
 
-class PostsListView(generic.ListView):
-    model = Post
-    template_name = 'index.html'
-    
-    
+
 def index(request):
     context['posts']
     for post in Post.objects.all():
@@ -45,7 +41,7 @@ def new_post(request):
             post.title = request.POST.get('title')
             post.description = request.POST.get('description')
             post.tags = request.POST.getlist('tag')
-            post.author = 'Mark'
+            post.author = request.user.get_full_name().split(" ")[0]
             post.publication_date = datetime.date.today()
             post.save()
             # redirect to a new URL:
@@ -56,6 +52,12 @@ def new_post(request):
         form = PostForm()
 
     return render(request, 'form.html', {'form': form})
+
+
+class PostsListView(generic.ListView):
+    model = Post
+    template_name = 'index.html'
+    paginate_by = 5
 
 
 class PostDetailView(generic.DetailView):

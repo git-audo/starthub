@@ -17,15 +17,15 @@
     <!-- <i data-feather="book-open"></i> -->
     <ul class="nav">
       <li id="home_button">Starthub</li> 
-      <li>Idee</li>
+      <li><a href="/board" id="logout">Idee</a></li>                  
       <li>Feedback</li>
       <li>About</li>      
       {% if user.is_authenticated %}
-      <li><a href="" id="logout">Profilo</a></li>            
+      <li><a href="">{{ user.get_full_name }}</a></li>            
       <li><a href="{% url 'logout' %}" id="logout">Logout</a></li>      
       {% else %}
       <!-- <li><a href="{% url 'social:begin' 'google-oauth2' %}" id="login">Login</a></li> -->
-      <li id="signup_li"><a href="signup" id="signup">Iscriviti</a></li>      
+      <li id="signup_li"><a href="/board/signup" id="signup">Iscriviti</a></li>      
       {% endif %}
     </ul>
   </div>
