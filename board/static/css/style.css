@@ -256,10 +256,11 @@ mark {
 }
 
 .pagination {
-    grid-column: 4/10;
+    grid-column: span 12;
     margin: auto;
     padding: 20px 0 0 0;
-    font-size: 20px;        
+    font-size: 20px;
+    opacity: 0.8;
 }
 
 .page-links a {
@@ -267,8 +268,18 @@ mark {
     margin: auto;
 }
 
-.page-links a:hover {
-    opacity: 0.6;
+.page-current {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #403f43;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 25px;
+    font-size: 16px;
+    font-weight: 900;
 }
 
 .footer {

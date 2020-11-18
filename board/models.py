@@ -2,13 +2,8 @@ from django.db import models
 from django.contrib.postgres.fields import ArrayField
 from datetime import date
 
+
 class Post(models.Model):
-    PHASES = [
-        ('I', 'Ideazione'),
-        ('S', 'Sviluppo'), 
-        ('D', 'Distribuzione'),        
-    ]
-    
     title = models.CharField(max_length=60)
     description = models.CharField(max_length=120)
     detailed_description = models.CharField(max_length=800)
@@ -20,10 +15,6 @@ class Post(models.Model):
             null=True,
             blank=True
         )
-    phase = models.CharField(
-        max_length=1,
-        choices=PHASES,
-    )
 
     @property
     def is_today(self):
