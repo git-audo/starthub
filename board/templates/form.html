@@ -5,8 +5,9 @@
     <form action="" method="post">
       <table>
 	{{ form.as_table }}
-      </table>	    
-      <input type="submit" value="OK">
+      </table>
+      <a id="back_button" href="/board/"><i id="back_arrow" data-feather="arrow-down-left"></i>Indietro</a>
+      <input id="submit_button" type="submit" value="Pubblica">
     </form>
   </div>
 {% endblock %}

@@ -6,7 +6,7 @@ from datetime import date
 class Post(models.Model):
     title = models.CharField(max_length=60)
     description = models.CharField(max_length=120)
-    detailed_description = models.CharField(max_length=800)
+    detailed_description = models.TextField()
     author = models.CharField(max_length=200)
     publication_date = models.DateField()
     tags =  ArrayField(

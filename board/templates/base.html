@@ -7,18 +7,18 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">  
   <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://unpkg.com/feather-icons"></script>  
 </head>
 
 <body>
   <div class="header">
     <!-- <i data-feather="book-open"></i> -->
     <ul class="nav">
-      <li id="home_button">Starthub</li> 
+      <li id="home_button">Startkit</li> 
       <li><a href="/board" id="logout">Idee</a></li>                  
       <li>Feedback</li>
       <li>About</li>      
       {% if user.is_authenticated %}
-      <li><a href="">{{ user.get_full_name }}</a></li>            
       <li><a href="{% url 'logout' %}" id="logout">Logout</a></li>      
       {% else %}
       <!-- <li><a href="{% url 'social:begin' 'google-oauth2' %}" id="login">Login</a></li> -->
@@ -30,3 +30,9 @@
   {% block content %} {% endblock %}
 
 </body>
+
+<script>
+  
+  feather.replace()
+
+</script>

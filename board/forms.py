@@ -2,6 +2,7 @@ from django import forms
 from board.models import Post
 from django.contrib.postgres.forms import SimpleArrayField
 
+
 class SignupForm(forms.Form):
     username = forms.CharField()
 

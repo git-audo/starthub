@@ -39,13 +39,14 @@ def new_post(request):
             # process the data in form.cleaned_data as required
             post = Post()
             post.title = request.POST.get('title')
-            post.description = request.POST.get('description')
-            post.tags = request.POST.getlist('tag')
+            post.description = request.POST.get('description')            
+            post.detailed_description = request.POST.get('detailed_description')
+            post.tags = request.POST.getlist('tags')[0].split(' ')
             post.author = request.user.get_full_name().split(" ")[0]
             post.publication_date = datetime.date.today()
             post.save()
             # redirect to a new URL:
-            return HttpResponseRedirect('/thanks/')
+            return HttpResponseRedirect('/board/')
 
     # if a GET (or any other method) we'll create a blank form
     else:

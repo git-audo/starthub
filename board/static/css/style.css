@@ -3,15 +3,17 @@ body {
     margin: 0px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 70px 140px 340px repeat(auto-fill, 200px);
+    grid-template-rows: 70px 140px 340px repeat(auto-fill, 170px);
     /*    font-family: 'Fira Sans', sans-serif; */
     font-family: 'Abel', sans-serif;    
-    background-color: #fbf7f0;
+    /* background-color: #fbf7f0; */
+    /* background-color: #2e3548; */
+    background-color: #0c1824;    
 }
 
 .feather {
     margin: auto;
-    color: #F78F3A; /* #252541  color palette*/
+    color: #F78F3A;
     width: 50px;
     height: 50px;
     stroke-width: 1;
@@ -21,23 +23,29 @@ body {
     grid-column: span 12;
     text-align: center;
     font-size: 12px;
-    background-color: #f2f7fc;
+    background-color: #0c1824;    
+    color: white;
+    opacity: 0.9;
     position: -webkit-sticky;
 }
 
 .header ul {
     display: flex;
+    margin-top: 16px;    
     justify-content: center;
     list-style: none;
-    margin-top: 16px;
 }
 
 .header li {
     margin: 0 16px 0 0;
+    padding-top: 9px;    
     height: 28px;
     font-size: 19px;
-    color: black;
-    padding-top: 9px;
+    color: white;
+}
+
+.header li a {
+    color: white;
 }
 
 .header li:hover {
@@ -54,8 +62,8 @@ body {
 
 #home_button {
     position: absolute;
+    top: 10px;    
     left: 3%;
-    top: 10px;
     font-size: 32px;
     font-weight: 800;
     opacity: 0.8;
@@ -74,24 +82,22 @@ body {
     width: 120px;
     height: 28px;
     margin: 0 15px 0 10px;
-    padding: 3px 10px 3px 10px;
-    color: white;
+    padding: 0 10px 0 10px;    
+    text-decoration: none;    
     text-align: center;
-    border-radius: 2px;
     font-size: 20px;
-    text-decoration: none;
-
-    padding: 0 10px 0 10px;
-    border: 2px solid black;
-    color: black;
-    border-radius: 6px;
     font-weight: bold;
+    border-radius: 6px;        
+    border: 2px solid white;            
+    background-color: white;
+    color: black;
 }
 
 #signup:hover {
     text-decoration: none;
+    border: 2px solid white;    
+    background-color: black;
     color: white;
-    background-color: black;    
 }
 
 a {
@@ -110,30 +116,33 @@ a:visited {
     grid-column: span 12;
     padding-top: 24px;
     font-size: 4em;
-    font-weight: 600;
+    font-weight: 400;
+    letter-spacing: 2px;
     text-align: center;
-    opacity: 0.9;
-    background-color: white;
+    background-color: #0c1824;
+    color: white;
 }
 
 .content {
     grid-column: span 12;
-    padding: 50px 20px 10px 20px;
+    margin: 0 0 30px 0;
+    padding: 20px 20px 10px 20px;
     text-align: center;
     font-size: 22px;
+    background-color: #0c1824;
+    color: white;
 }
 
 #new-post {
     border: none;
-    margin: 0 25px 0 0;
     padding: 10px 20px 10px 20px;
-
-    background-color: #3f52fb;
-    color: white;
     text-align: center;
     border-radius: 2px;
     font-size: 18px;
-    -webkit-appearance: button;    
+    background-color: #3f52fb;
+    color: white;
+    
+    -webkit-appearance: button;
 }
 
 #new-post:hover {
@@ -143,29 +152,25 @@ a:visited {
 .block_left, .block_right {
     display: flex;
     flex-flow: row;
-    margin: 0;
+    margin-top: 5px;    
     padding-left: 20px;
     grid-column: span 12;  
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 2px 6px 10px #E1E1E1;
-    font-size: 14px;
-    border-style: solid;
-    border-width: 0px 0px 1px 0px;
-    border-color: #f0f0f0;
+    font-size: 13px;
+    border-radius: 4px;    
+    border: solid 0 #0c1824; 
+    background-color: #1d2833;
+    color: #f0f4f7;    
 }
 
 .block_left:hover, .block_right:hover {
-    /* transform: scale(1.01); */
     cursor: pointer;
-    background-color: #f8f8f8;    
-    //    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);        
+    background-color: #374351;            
 }
 
 .text {
-    flex: 4;
     display: flex;
-    flex-flow: column;
+    flex-flow: column;    
+    flex: 4;
 }
 
 .title {
@@ -189,14 +194,18 @@ a:visited {
 }
 
 .tag {
-    font-size: 17px;    
-    height: 26px;
-    width: auto;
     margin: 30px 10px 20px 0px;
     padding: 2px 15px 2px 15px;
+    height: 26px;
+    width: auto;
+    font-size: 17px;        
     text-align: center;    
     border-radius: 4px;
-    background-color: #f2f7fc;;     
+    /* background-color: #f9f871; */
+    /* background-color: #89d278; */
+    background-color: #1d2833;
+    border: solid 1px #3f52fb;;    
+    color: white;
 }
 
 .stage {
@@ -221,26 +230,19 @@ a:visited {
     padding: 0;
 }
 
-mark {
-    background-color: #ffb77c;
-    color: white;
-    padding: 0 3px 0 3px;
-}
-
 .full_post {
-    padding: 0 8px 0 8px;
+    display: flex;
+    flex-flow: column;
+    padding: 0 12px 0 12px;
+    grid-column: span 12;    
     grid-row: span 10;
-    grid-column: span 12;
-    background-color: white;
-    border-color: #f0f0f0;
-    box-shadow: 2px 6px 10px #E1E1E1;    
-    box-shadow: 0px 0px -1px #e0e0e0;
     border-style: solid;    
     border-width: 0px 0px 2px 0px;
     border-radius: 10px;
     font-size: 18px;
-    display: flex;
-    flex-flow: column;
+    border-color: #0c1824;
+    background-color: #1d2833;
+    color: #f0f4f7;            
 }
 
 .post_header {
@@ -266,20 +268,21 @@ mark {
 .page-links a {
     padding: 0 20px 0 20px;
     margin: auto;
+    color:  #e4e7e9;    
 }
 
 .page-current {
+    display: inline-block;    
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    display: inline-block;
-    background-color: #403f43;
-    color: white;
     text-align: center;
     vertical-align: middle;
     line-height: 25px;
     font-size: 16px;
     font-weight: 900;
+    background-color: #403f43;    
+    color:  #e4e7e9;        
 }
 
 .footer {
@@ -296,16 +299,17 @@ mark {
 .footer li {
     display: inline;
     padding-right: 18px;
+    color:  #e4e7e9;            
 }
 
 .footer a:link {
     text-decoration: none;
-    color: black;
+    color:  #e4e7e9;            
 }
 
 .footer a:visited {
     text-decoration: none;
-    color: black;    
+    color:  #e4e7e9;                
 }
 
 .footer a:hover {
@@ -384,10 +388,73 @@ mark {
     transition: all .3s ease;
 }
 
+table {
+    margin: auto;
+    margin-bottom: 10px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+td,
+th {
+    padding: 6px;
+    text-align: left;
+    vertical-align: top;
+    word-wrap: break-word;
+}
+
+table input,
+textarea,
+select {
+    margin: 0 6px 6px 0;
+    padding: 4px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    font-size: 18px;
+    background-color: #374351;
+    color: #f0f4f7;
+}
+
+#back_button {
+    margin: 0 40px 0 0;
+    height: 100px;
+    font-size: 20px;
+    color: #f0f4f7;
+}
+
+#back_button:hover {
+    opacity: 0.8;
+}
+
+#back_arrow {
+    height: 24px;
+    vertical-align: middle;
+    stroke-width: 2px;
+    color: #f0f4f7;
+}
+
+#submit_button {
+    width: 150px;
+    height: 40px;
+    margin: 50px 0 0 0;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 6px;        
+    border: 2px solid #3f52fb;     
+    background-color: #3f52fb;
+    color:#f0f4f7;
+}
+
+#submit_button:hover {
+    opacity: 0.8;
+}
+
+
 @media only screen and (min-width: 1200px)   {
     body {
         grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: 80px 150px 260px repeat(auto-fill, 180px);
+        grid-template-rows: 80px 135px 280px repeat(auto-fill, 180px);
     }
 
     .header li {
@@ -402,13 +469,13 @@ mark {
 	    margin: 7px 0 0 32px;
 	    padding: 1px 28px 1px 28px;
 	    text-decoration: none;
-
-        border: 2px solid #2a3ffb;
-        color: #2a3ffb;
-        border: 2px solid black;
-        color: black;
         border-radius: 2px;
         font-weight: 800;
+    }
+
+    #signup:hover {
+        text-decoration: none;
+        opacity: 0.8;
     }
 
     .page_title {
@@ -416,44 +483,43 @@ mark {
     }
 
     #new-post {
-	    border: none;
 	    margin: 0 25px 0 0;
 	    padding: 10px 20px 10px 20px;
+	    text-align: center;
+	    font-size: 18px;
+	    border-radius: 2px;
         background-color: #3f52fb;        
 	    color: white;
-	    text-align: center;
-	    border-radius: 2px;
-	    font-size: 18px;
+        
     }
 
     #new-post:hover {
         opacity: 0.9;
     }
     
-    .block_left {
-        margin: 0px 15px 0px 25px;
+    .block_left {         
+        margin: 6px 15px 0px 25px;
         padding: 0 0 0 80px;	
         grid-column: 4/10;
         min-width: 400px;	
-        background-color: white;
-        box-shadow: 0px 0px -1px #e0e0e0;
         font-size: 14px;
-
-        border-radius: 0px;
+        border-radius: 4px;        
         border-style: solid;
-        border-width: 0px 0px 2px 0px;
-        border-color: #f0f0f0;
+        border-width: 0px;
+        border-color: #0c1824;
+        background-color: #1d2833;
+        color: #f0f4f7;
     }
 
     .block_left:hover {
-    	background-color: #f8f8f8;
+        background-color: #374351;
     }
 
     .block_right {
-        grid-column: 9/11;
-        grid-row: span 1;
 	    display: flex;
 	    flex-flow: row;
+        grid-column: 9/11;
+        grid-row: span 1;
 	    padding: 0;
     }
 
@@ -469,29 +535,30 @@ mark {
     }
 
     form {
+        grid-column: 3/11;
+        margin: auto;
+        width: 60%;
 	    padding: 20px 0 20px 0;
     }
-    
-    table {
-	    margin: auto;
+
+    form input {
+
     }
 
+    form table {
+
+    }
+    
     .full_post {
-        margin: 50px 15px 0px 25px;
-        padding: 0;	
-        grid-column: 3/11;
-        grid-row: 2/8;
-        min-width: 400px;	
-        background-color: white;
-        border-color: #f0f0f0;
-        box-shadow: 2px 6px 10px #E1E1E1;    
-        box-shadow: 0px 0px -1px #e0e0e0;
-        border-style: solid;    
-        border-width: 0px 0px 2px 0px;
-        border-radius: 10px;
-        font-size: 14px;
         display: flex;
         flex-flow: column;
+        grid-column: 4/10;
+        margin: 50px 15px 0px 25px;
+        padding: 0 30px 0 30px;	
+        border-radius: 10px;
+        font-size: 20px;
+        border-color: #0c1824;
+        background-color: #1d2833;
     }
 
     .social-button {
