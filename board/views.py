@@ -51,6 +51,7 @@ def new_post(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         form = PostForm()
+        form.fields['author'].initial = request.user.username
 
     return render(request, 'form.html', {'form': form})
 

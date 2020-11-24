@@ -403,11 +403,17 @@ th {
     word-wrap: break-word;
 }
 
+form hr {
+    margin-top: 40px;
+    width: 40%;
+    color: #374351;
+}
+
 table input,
 textarea,
 select {
     margin: 0 6px 6px 0;
-    padding: 4px;
+    padding: 4px 0 4px 10px;
     border: none;
     border-radius: 6px;
     outline: none;

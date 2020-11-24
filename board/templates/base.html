@@ -19,7 +19,8 @@
       <li>Feedback</li>
       <li>About</li>      
       {% if user.is_authenticated %}
-      <li><a href="{% url 'logout' %}" id="logout">Logout</a></li>      
+      <li>|</li>
+      <li id="logout_li"><a id="logout" href="{% url 'logout' %}">Logout</a></li>      
       {% else %}
       <!-- <li><a href="{% url 'social:begin' 'google-oauth2' %}" id="login">Login</a></li> -->
       <li id="signup_li"><a href="/board/signup" id="signup">Iscriviti</a></li>      
