@@ -9,6 +9,7 @@ class Post(models.Model):
     detailed_description = models.TextField()
     author = models.CharField(max_length=200)
     publication_date = models.DateField()
+    email = models.EmailField(max_length=254)
     tags =  ArrayField(
             models.CharField(max_length=50, blank=True),
             size=3,

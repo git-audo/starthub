@@ -30,13 +30,10 @@ def signup(request):
 
 @csrf_exempt
 def new_post(request):
-    # if this is a POST request we need to process the form data
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
         form = PostForm(request.POST)
-        # check whether it's valid:
+
         if form.is_valid():
-            # process the data in form.cleaned_data as required
             post = Post()
             post.title = request.POST.get('title')
             post.description = request.POST.get('description')            
@@ -44,11 +41,11 @@ def new_post(request):
             post.tags = request.POST.getlist('tags')[0].split(' ')
             post.author = request.user.get_full_name().split(" ")[0]
             post.publication_date = datetime.date.today()
+            post.email = request.POST.get('email')
             post.save()
-            # redirect to a new URL:
+
             return HttpResponseRedirect('/board/')
 
-    # if a GET (or any other method) we'll create a blank form
     else:
         form = PostForm()
         form.fields['author'].initial = request.user.username
@@ -65,3 +62,8 @@ class PostsListView(generic.ListView):
 class PostDetailView(generic.DetailView):
     model = Post
     template_name = 'post.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(PostDetailView, self).get_context_data(**kwargs)
+        context['hello'] = "Hello, world"
+        return context

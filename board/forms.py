@@ -10,13 +10,14 @@ class SignupForm(forms.Form):
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'description', 'detailed_description', 'tags', 'author']
+        fields = ['title', 'description', 'detailed_description', 'tags', 'author', 'email']
         labels = {
             'title': 'Titolo',
             'description': 'Descrizione',
             'detailed_description': 'Descrizione completa',
             'tags': 'Tag',
-            'author': 'Autore'
+            'author': 'Autore',
+            'email': 'Email'
         }
 
     
